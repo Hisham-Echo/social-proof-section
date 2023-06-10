@@ -17,7 +17,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
     font-weight: 400;
     position: relative;
     border-radius: 5px;
@@ -54,7 +54,7 @@ header,
 main,
 footer {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 400px;
 }
 
 /* header */
@@ -67,16 +67,18 @@ header {
 }
 
 header h1 {
+    font-size: 2.8rem;
     margin-top: 65px;
     padding: 0 20px;
     color: var(--Very-Dark-Magenta);
 }
 
 header p {
-    padding: 15px 10px;
+    padding: 15px 30px;
     margin-bottom: 15px;
     color: var(--Dark-Grayish-Magenta);
     font-weight: 500;
+    line-height: 1.3;
 }
 
 header .reviews {
@@ -89,23 +91,25 @@ header .reviews {
 }
 
 header .reviews .review {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     background-color: var(--Light-Grayish-Magenta, magenta);
     padding: 15px;
-    padding-top: 40px;
     margin-bottom: 10px;
     width: 100%;
+}
+
+header .reviews .review .text {
+    padding-top: 10px;
     font-weight: 700;
     color: var(--Very-Dark-Magenta, darkmagenta);
 }
 
-header .reviews .review::before {
-    content: "";
-    background-image: url(images/icon-star.svg);
-    width: 84px;
-    height: 15px;
-    position: absolute;
-    top: 15px;
-    left: calc(50% - (84px / 2));
+header .reviews .review .stars img {
+    margin-left: 2px;
+    width: 15px;
 }
 
 /* main */
@@ -150,15 +154,71 @@ main .card .bottom {
     color: var(--White);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
     body {
         height: 100vh;
+        padding-top: 50px;
         background-image: url(images/bg-pattern-top-desktop.svg),
             url(images/bg-pattern-bottom-desktop.svg);
     }
+
+    header,
+    main,
+    footer {
+        padding: 0px;
+        max-width: 1050px;
+    }
+
     header {
         flex-flow: row nowrap;
         justify-content: space-between;
+        gap: 300px;
+        padding: unset;
+    }
+
+    header .left {
+        text-align: left;
+        width: 45ch;
+    }
+
+    header .left h1 {
+        padding: 0;
+    }
+
+    header .left p {
+        padding: 30px 20px 0 0;
+    }
+
+    header .reviews {
+        width: 45ch;
+        align-self: flex-end;
+    }
+
+    header .reviews .review {
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 25px 15px 10px;
+    }
+
+    header .reviews .review .text {
+        padding: 0;
+    }
+
+    header .reviews .review:nth-of-type(2) {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+    }
+
+    header .reviews .review:first-of-type {
+        transform: translateX(-100px);
+        -webkit-transform: translateX(-100px);
+        -moz-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+        -o-transform: translateX(-100px);
     }
 
     main {
@@ -168,9 +228,11 @@ main .card .bottom {
     main .card {
         width: calc(33% - 10px);
     }
+
     main .card:nth-child(2) {
         margin-top: 30px;
     }
+
     main .card:last-child {
         margin-top: 60px;
     }
