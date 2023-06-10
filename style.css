@@ -1,0 +1,177 @@
+/** MOBILE FIRST **/
+:root {
+    font-size: 15px;
+
+    /* ## Colors */
+    /* ### Primary */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+
+    /* ### Neutral */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 400;
+    position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+img {
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-image: url(images/bg-pattern-top-mobile.svg),
+        url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    /* background-position: left 48vw top 52vh, right 52vw bottom 35vh; */
+}
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+header,
+main,
+footer {
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* header */
+header {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin-top: 65px;
+    padding: 0 20px;
+    color: var(--Very-Dark-Magenta);
+}
+
+header p {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    color: var(--Dark-Grayish-Magenta);
+    font-weight: 500;
+}
+
+header .reviews {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+header .reviews .review {
+    background-color: var(--Light-Grayish-Magenta, magenta);
+    padding: 15px;
+    padding-top: 40px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-weight: 700;
+    color: var(--Very-Dark-Magenta, darkmagenta);
+}
+
+header .reviews .review::before {
+    content: "";
+    background-image: url(images/icon-star.svg);
+    width: 84px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left: calc(50% - (84px / 2));
+}
+
+/* main */
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+main .card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 35px;
+    gap: 25px;
+    width: 100%;
+    background-color: var(--Very-Dark-Magenta);
+}
+
+main .card .top {
+    font-size: 0.7rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 20px;
+}
+
+main .card .top .text h2 {
+    color: var(--White);
+}
+
+main .card .top .text h3 {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: var(--Soft-Pink);
+}
+
+main .card .bottom {
+    line-height: 1.5;
+    color: var(--White);
+}
+
+@media (min-width: 1000px) {
+    body {
+        height: 100vh;
+        background-image: url(images/bg-pattern-top-desktop.svg),
+            url(images/bg-pattern-bottom-desktop.svg);
+    }
+    header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    main {
+        justify-content: space-between;
+    }
+
+    main .card {
+        width: calc(33% - 10px);
+    }
+    main .card:nth-child(2) {
+        margin-top: 30px;
+    }
+    main .card:last-child {
+        margin-top: 60px;
+    }
+}
