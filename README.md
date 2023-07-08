@@ -95,4 +95,4 @@ This challenge is completely free. Please share it with anyone who will find it 
 https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA/hub
 
 **Live-Preview:**
-https://hisham3243.github.io/social-proof-section/
+https://hisham-echo.github.io/social-proof-section/
